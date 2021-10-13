@@ -1,24 +1,24 @@
 ﻿using FinanceCalculator.DataLoader;
 using FinanceCalculator.Models;
 using FinanceCalculator.Test.Common.Helpers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FinanceCalculator.Test.xUnit.Fixtures;
 using System;
 using System.Collections.Generic;
+using Xunit;
 
-namespace FinanceCalculator.Test.MSTest
+namespace FinanceCalculator.Test.xUnit
 {
-	[TestClass]
-	public class DataLoaderTests
+	public class DataLoaderTests : IClassFixture<DataLoaderFixture>
 	{
-		static DataLoader.DataLoader _dataLoader;
+		DataLoaderFixture _fixture;
 
-		[ClassInitialize]
-		public static void ClassInitialize(TestContext context)
+		// setup, before every test
+		public DataLoaderTests(DataLoaderFixture fixture)
 		{
-			_dataLoader = new DataLoader.DataLoader();
+			_fixture = fixture;
 		}
 
-		[TestMethod]
+		[Fact]
 		public void LoadTransactionTest()
 		{
 			List<Transaction> expected = new List<Transaction>()
@@ -28,10 +28,9 @@ namespace FinanceCalculator.Test.MSTest
 				new Transaction() { Time = new DateTime(2010, 11, 24), Amount = 4324m, Location = "London", Customer = "Patrik Vujak" },
 			};
 
-			List<Transaction> transactions = _dataLoader.LoadTransactions(TestData.TransactionsFilePath);
+			List<Transaction> transactions = _fixture.DataLoader.LoadTransactions(TestData.TransactionsFilePath);
 
-			// CollectionAssert.AreEquivalent(expected, transactions); //hash code :)
-			CollectionAssert.AreEqual(expected, transactions);
+			Assert.Equal(expected, transactions);
 		}
 	}
 }

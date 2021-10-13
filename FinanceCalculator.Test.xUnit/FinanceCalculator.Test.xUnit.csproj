@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FinanceCalculator.Test.Common\FinanceCalculator.Test.Common.csproj" />
     <ProjectReference Include="..\FinanceCalculator\FinanceCalculator.csproj" />
   </ItemGroup>
 

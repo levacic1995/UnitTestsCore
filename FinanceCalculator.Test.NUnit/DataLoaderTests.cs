@@ -1,24 +1,25 @@
 ﻿using FinanceCalculator.DataLoader;
 using FinanceCalculator.Models;
 using FinanceCalculator.Test.Common.Helpers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace FinanceCalculator.Test.MSTest
+namespace FinanceCalculator.Test.NUnit
 {
-	[TestClass]
+	[TestFixture]
 	public class DataLoaderTests
 	{
 		static DataLoader.DataLoader _dataLoader;
 
-		[ClassInitialize]
-		public static void ClassInitialize(TestContext context)
+
+		[OneTimeSetUp]
+		public static void OneTimeSetUp()
 		{
 			_dataLoader = new DataLoader.DataLoader();
 		}
 
-		[TestMethod]
+		[Test]
 		public void LoadTransactionTest()
 		{
 			List<Transaction> expected = new List<Transaction>()

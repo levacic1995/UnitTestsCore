@@ -79,7 +79,7 @@ namespace FinanceCalculator.Test.MSTest
 
 		//[DataTestMethod]
 		//[DynamicData(nameof(GetSavingsData), DynamicDataSourceType.Method)]
-		//public void GetSavingsValueTest_Data_SecondWay(int year, decimal expected)
+		//public void GetSavingsValueTest_Data_Method(int year, decimal expected)
 		//{
 		//	decimal capital = 2000;
 		//	decimal interestRate = 0.016m;
@@ -119,6 +119,7 @@ namespace FinanceCalculator.Test.MSTest
 
 		[TestMethod]
 		[TestCategory("Calculation")]
+		[TestProperty("Exception", "NegativeYearException")]
 		public void GetSavingsValueTest_NegativeYear()
 		{
 			decimal capital = 2000;
