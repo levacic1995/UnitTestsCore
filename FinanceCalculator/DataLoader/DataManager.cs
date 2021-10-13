@@ -1,13 +1,20 @@
-﻿using FinanceCalculator.Models;
+﻿using FinanceCalculator.Database;
+using FinanceCalculator.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace FinanceCalculator.DataLoader
+namespace FinanceCalculator.DataManager
 {
-	public class DataLoader
+	public class DataManager
 	{
+		public void SaveTransactions(FinanceContext context, List<Transaction> transactions)
+		{
+			context.Transactions.AddRange(transactions);
+			context.SaveChanges();
+		}
+
 		public List<Transaction> LoadTransactions(string path)
 		{
 			List<Transaction> result = new List<Transaction>();

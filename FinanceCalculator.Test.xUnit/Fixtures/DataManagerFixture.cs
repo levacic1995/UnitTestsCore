@@ -7,13 +7,13 @@ using System.Text;
 
 namespace FinanceCalculator.Test.xUnit.Fixtures
 {
-	public class DataLoaderFixture
+	public class DataManagerFixture
 	{
-		public DataLoader.DataLoader DataLoader { get; set; }
+		public DataManager.DataManager DataManager { get; set; }
 
-		public DataLoaderFixture()
+		public DataManagerFixture()
 		{
-			DataLoader = new DataLoader.DataLoader();
+			DataManager = new DataManager.DataManager();
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,8 @@ namespace FinanceCalculator.Models
 {
 	public class Transaction
 	{
+		public int Id { get; set; }
+
 		public DateTime Time { get; set; }
 
 		public decimal Amount { get; set; }
