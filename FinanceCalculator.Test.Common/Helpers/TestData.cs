@@ -12,7 +12,7 @@ namespace FinanceCalculator.Test.Common.Helpers
 		public static string TransactionsMissingDataFilePath
 			=> @"TestData/transactions_missing_data.csv";
 
-		public static string TransactionsWrongAmountFilePath
-			=> @"TestData/transactions_wrong_amount.csv";
+		public static string TransactionsInvalidDataFilePath
+			=> @"TestData/transactions_invalid_data.csv";
 	}
 }

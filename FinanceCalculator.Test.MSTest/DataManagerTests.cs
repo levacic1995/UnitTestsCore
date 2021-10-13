@@ -37,6 +37,36 @@ namespace FinanceCalculator.Test.MSTest
 		}
 
 		[TestMethod]
+		public void LoadTransactionTest_MissingData()
+		{
+			List<Transaction> expected = new List<Transaction>()
+			{
+				new Transaction() { Time = new DateTime(2000, 1, 1), Amount = 2123m, Location = "New York", Customer = "Ivo Ivic" },
+				new Transaction() { Time = new DateTime(2010, 11, 24), Amount = 4324m, Location = "London", Customer = "Patrik Vujak" },
+			};
+
+			List<Transaction> transactions = _dataManager.LoadTransactions(TestData.TransactionsMissingDataFilePath);
+
+			// CollectionAssert.AreEquivalent(expected, transactions); //hash code :)
+			CollectionAssert.AreEqual(expected, transactions);
+		}
+
+		[TestMethod]
+		public void LoadTransactionTest_InvalidData()
+		{
+			List<Transaction> expected = new List<Transaction>()
+			{
+				new Transaction() { Time = new DateTime(2000, 1, 1), Amount = 2123m, Location = "New York", Customer = "Ivo Ivic" },
+				new Transaction() { Time = new DateTime(2010, 11, 24), Amount = 4324m, Location = "London", Customer = "Patrik Vujak" },
+			};
+
+			List<Transaction> transactions = _dataManager.LoadTransactions(TestData.TransactionsInvalidDataFilePath);
+
+			// CollectionAssert.AreEquivalent(expected, transactions); //hash code :)
+			CollectionAssert.AreEqual(expected, transactions);
+		}
+
+		[TestMethod]
 		public void SaveTransactionsTest_Sqlite()
 		{
 			List<Transaction> transactions = GetTestData();

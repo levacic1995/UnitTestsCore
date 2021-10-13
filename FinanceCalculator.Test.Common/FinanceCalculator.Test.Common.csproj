@@ -19,7 +19,7 @@
     <None Update="TestData\transactions_missing_data.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\transactions_wrong_amount.csv">
+    <None Update="TestData\transactions_invalid_data.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

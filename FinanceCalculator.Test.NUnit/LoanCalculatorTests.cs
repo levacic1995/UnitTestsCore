@@ -144,7 +144,7 @@ namespace FinanceCalculator.Test.NUnit
 		}
 
 		[Test]
-		public void IsPersonCreditableTest_Pass()
+		public void IsPersonCreditableTest()
 		{
 			Person person = new PersonBuilder().WithIsEmployed(true)
 											   .WithSalaries(new List<decimal>() { 1000m, 2000m, 3000m, 4000m, 5000m })
@@ -158,7 +158,7 @@ namespace FinanceCalculator.Test.NUnit
 		}
 
 		[Test]
-		public void IsPersonCreditableTest_Fail()
+		public void IsPersonCreditableTest_NotCreditable()
 		{
 			Person person = new PersonBuilder().WithIsEmployed(true)
 											   .WithSalaries(new List<decimal>() { 1000m, 2000m, 3000m, 4000m, 5000m })
