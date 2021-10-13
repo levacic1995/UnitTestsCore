@@ -22,7 +22,7 @@ namespace FinanceCalculator.Test.MSTest
 		[ClassInitialize]
 		public static void ClassInitialize(TestContext context)
 		{
-			IOptions<FinanceCalculatorOptions> options = Microsoft.Extensions.Options.Options.Create(new FinanceCalculatorOptions()
+			IOptions<FinanceCalculatorOptions> options = Options.Create(new FinanceCalculatorOptions()
 			{
 				DefaultCurrencyCode = "HUF"
 			});

@@ -20,7 +20,7 @@ namespace FinanceCalculator.Test.NUnit
 		[OneTimeSetUp]
 		public static void OneTimeSetUp()
 		{
-			IOptions<FinanceCalculatorOptions> options = Microsoft.Extensions.Options.Options.Create(new FinanceCalculatorOptions()
+			IOptions<FinanceCalculatorOptions> options = Options.Create(new FinanceCalculatorOptions()
 			{
 				DefaultCurrencyCode = "HUF"
 			});

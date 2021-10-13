@@ -15,7 +15,7 @@ namespace FinanceCalculator.Test.xUnit.Fixtures
 
 		public LoanCalculatorFixture()
 		{
-			IOptions<FinanceCalculatorOptions> options = Microsoft.Extensions.Options.Options.Create(new FinanceCalculatorOptions()
+			IOptions<FinanceCalculatorOptions> options = Options.Create(new FinanceCalculatorOptions()
 			{
 				DefaultCurrencyCode = "HUF"
 			});
